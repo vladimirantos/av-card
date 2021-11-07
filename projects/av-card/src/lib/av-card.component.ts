@@ -21,6 +21,11 @@ export class AvCardComponent implements OnInit {
    * Zobrazení badge vedle nadpisu
    */
   @Input() badge: string;
+
+  @Input() shadowClass: string = 'shadow';
+
+  @Input() class: string;
+
   @ContentChild('body', { static: true }) bodyTemplate: TemplateRef<any>;
   @ContentChild('header', { static: true }) headerTemplate: TemplateRef<any>;
   @ContentChild('headerRight', {static: true}) headerRightTemplate: TemplateRef<any>;
