@@ -3,11 +3,14 @@
 		<ng-container *ngIf="displayHeader">
 			<ng-container *ngIf="!headerTemplate; else customHeader">
 				<h5 class="card-title">{{title}}</h5>
-				<h6 class="card-subtitle mb-2 text-muted">{{subtitle}}</h6>
-			</ng-container>
-				<ng-template #customHeader>
-				<ng-template *ngTemplateOutlet="headerTemplate"></ng-template>
+				<h6 class="card-subtitle mb-2 text-muted" *ngIf="!subtitleTemplate; else customSubtitle">{{subtitle}}</h6>
+				<ng-template #customSubtitle>
+					<ng-template *ngTemplateOutlet="subtitleTemplate"></ng-template>
 				</ng-template>
+			</ng-container>
+			<ng-template #customHeader>
+				<ng-template *ngTemplateOutlet="headerTemplate"></ng-template>
+			</ng-template>
 		</ng-container>
 		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
 			content.</p>
