@@ -26,6 +26,8 @@ export class AvCardComponent implements OnInit {
 
   @Input() class: string;
 
+  @Input() displayHeader: boolean = true;
+
   @ContentChild('body', { static: true }) bodyTemplate: TemplateRef<any>;
   @ContentChild('header', { static: true }) headerTemplate: TemplateRef<any>;
   @ContentChild('headerRight', {static: true}) headerRightTemplate: TemplateRef<any>;
